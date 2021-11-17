@@ -15,15 +15,15 @@
       file :
         path: /home/{{ ansible_user }}/webapp/
         state: directory
-    - name: "install git"
-      yum:
-        name: git
-        state: present
-        update_cache: yes
-    - name: "git clone to nginx folder"
-      git:
-        repo: https://github.com/diranetafen/static-website-example.git
-        dest: /home/{{ ansible_user }}/webapp/
+#    - name: "install git"
+#      yum:
+#        name: git
+#        state: present
+#        update_cache: yes
+#    - name: "git clone to nginx folder"
+#      git:
+#        repo: https://github.com/diranetafen/static-website-example.git
+#        dest: /home/{{ ansible_user }}/webapp/
     - name: Generate html
       template:
         src: templates/index.html.j2
