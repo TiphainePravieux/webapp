@@ -24,16 +24,16 @@
 #      git:
 #        repo: https://github.com/diranetafen/static-website-example.git
 #        dest: /home/{{ ansible_user }}/webapp/
-    - name: Generate html
-      template:
-        src: templates/index.html.j2
-        dest: /home/{{ ansible_user }}/webapp/index.html
-    - name: "Lauching an HTTPD Container"
-      docker_container:
-        name: nginx-server
-        image: nginx
-        state: started
-        ports:
-          - "8080:80"
-        volumes:
-          - /home/{{ ansible_user }}/webapp:/usr/share/nginx/html
+#    - name: Generate html
+#      template:
+#        src: templates/index.html.j2
+#        dest: /home/{{ ansible_user }}/webapp/index.html
+#    - name: "Lauching an HTTPD Container"
+#      docker_container:
+#        name: nginx-server
+#        image: nginx
+#        state: started
+#        ports:
+#          - "8080:80"
+#        volumes:
+#          - /home/{{ ansible_user }}/webapp:/usr/share/nginx/html
