@@ -1,0 +1,12 @@
+---
+- name : "install webapp v5"
+  become: yes
+  hosts: prod
+ # vars_files:
+ # - files/secrets/credentials.yml
+
+  tasks:
+   - name: Generate html
+     template:
+       src: templates/index.html.j2
+       dest: "/usr/share/nginx/html/index.html"
